@@ -4,6 +4,10 @@ Este es un proyecto de freeCodeCamp en el cual debo crear un convertidor de nume
 completar para asi poder tener mi certificación en fCC, hasta ahora ya he creado algunos proyectos y los estaré repasando para así poder completar este.
 
 ## Reglas del Proyecto: 
+Los números romanos se basan en siete símbolos y se pueden escribir utilizando varias combinaciones para representar números arábigos. Por ejemplo:
+
+[![Captura-de-pantalla-7.png](https://i.postimg.cc/Y2vm9x2P/Captura-de-pantalla-7.png)](https://postimg.cc/NLw0CmH8)
+
 1. Debe tener un elemento de entrada con un id de ***"número"***
 
 2. Debe tener un elemento de botón con un id de ***"convert-btn"***
