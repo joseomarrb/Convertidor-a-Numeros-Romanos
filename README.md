@@ -45,3 +45,6 @@ en el elemento ***#convert-btn***, el elemento #output debe contener el texto **
 Cumpla con las historias de usuario y apruebe todas las pruebas a continuación
 para completar este proyecto. Déle su propio estilo personal. ¡Feliz codificación!
 
+## Proyecto Finalizado :)
+[![Captura-de-pantalla-11.png](https://i.postimg.cc/XJvyW4nS/Captura-de-pantalla-11.png)](https://postimg.cc/R3j0Qr3X)
+
