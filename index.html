@@ -4,13 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Convertidor a Numeros Romanos</title>
+    <link rel="shortcut icon" href="src/javascript.svg" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <input type="text" id="number">
-    <button id="convert-btn">Button</button>
-    <p id="output"></p>
+    <div id="particles-js"></div>
+    <h1 class="title">Convertidor de Números Romanos</h1>
+    <div class="card">
+        <h2 class="card-title">Ingresa un Numéro:</h2>
+        <div class="input-wrapper">
+            <input class="input" type="number" id="number" placeholder="Inserta aquí...">
+        </div>
+        <button class="button" id="convert-btn">Convertir</button>
+    </div>
 
+    <div class="oculto" id="output"></div>
+
+    <script src="src/particles.min.js"></script>
+    <script src="src/particulas.js"></script>
     <script src="./script.js"></script>
 </body>
 </html>
+
+
+

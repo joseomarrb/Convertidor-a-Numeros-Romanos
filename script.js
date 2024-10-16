@@ -13,12 +13,15 @@ function checkInput() {
     const inputNumberConvert = parseInt(inputNumber.value)
     if (!inputNumber.value.trim()) {
         output.textContent = "Please enter a valid number";
+        mostrarError(output);
         return;
-    } else if (inputNumberConvert < 0) {
+    } else if (inputNumberConvert <= 0) {
         output.textContent = "Please enter a number greater than or equal to 1";
+        mostrarError(output);
         return;
     } else if (inputNumberConvert >= 4000) {
         output.textContent = "Please enter a number less than or equal to 3999";
+        mostrarError(output);
         return;
     }
     convertInput(inputNumberConvert);
@@ -26,6 +29,7 @@ function checkInput() {
 
 function convertInput(input) {
     output.textContent = "";
+
     while (input > 0) {
         if (input >= 1000) {
             output.textContent += "M";
@@ -68,6 +72,20 @@ function convertInput(input) {
             input -= 1;
         }
     }
-
+    mostrarCorrecto(output);
     return output.textContent;
-};
+};  
+
+function mostrarError(output) {
+    output.classList.remove("correcto");
+    output.classList.remove("oculto");
+    output.classList.add("error");
+    output.classList.add("visible");
+}
+
+function mostrarCorrecto(output) {
+    output.classList.remove("error");
+    output.classList.remove("oculto");
+    output.classList.add("correcto");
+    output.classList.add("visible");
+}

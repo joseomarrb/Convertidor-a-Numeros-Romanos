@@ -1,10 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Artifika&family=Berkshire+Swash&family=Gideon+Roman&family=Lobster&family=Nosifer&family=Sixtyfour+Convergence&display=swap');
+
 *{
+    box-sizing: border-box;
+    font-family: "Gideon Roman", serif;
+}
+
+:root {
+    --primary-color: #3b82f6;
+    --background-color: #ffffff;
+    --text-color: #1f2937;
+    --border-color: #e5e7eb;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
     margin: 0;
-    padding: 0;
+    position: relative;
+    z-index: 99;
+    background-color: black;
+}
+
+#particles-js{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+}
+
+.title{
+    text-align: center;
+    color: #f3f4f6;
+    margin-bottom: 1.5rem;
+}
+
+.card {
+    background: linear-gradient(-180deg, #BCC5CE 0%, #929EAD 98%), radial-gradient(at top left, rgba(255,255,255,0.30) 0%, rgba(0,0,0,0.30) 100%);
+    background-blend-mode: screen;
+    color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 5px 5px 15px 1px #fff8 ;
+    width: 90%;
+    max-width: 450px;
+    padding: 3rem 2rem;
+}
+
+.card-title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+
+.input-wrapper {
+    margin-bottom: 1.5rem;
+}
+
+.input {
+    font-family: Arial, sans-serif;
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
     box-sizing: border-box;
 }
 
+.button {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1.2rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #2563eb;
+}
+
 #output{
+    width: 90%;
+    max-width: 450px;
+    margin: 1.5rem 0;
+    padding: 5px 0;
     color: #000;
-    background-color: red;
+    text-align: center;
+    font-size: 28px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 2px 2px #fff5;
+}
+
+.oculto{
+    display: none;
+}
+
+.visible{
+    display: block;
+}
+
+.error{
+    background-color: #ffadad;
+    border: 3px solid #f008;
+}
+
+.correcto{
+    background-color: #97f497;
+    border: 3px solid rgb(67, 255, 83);
 }
