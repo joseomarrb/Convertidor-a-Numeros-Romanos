@@ -1,91 +1,68 @@
-
 //Variables
-const inputNumber = document.querySelector("#number");
-const convertBtn = document.querySelector("#convert-btn");
-const output = document.querySelector("#output");
+const inputNumber = document.querySelector('#number');
+const convertBtn = document.querySelector('#convert-btn');
+const output = document.querySelector('#output');
 
 //Eventos
-convertBtn.addEventListener("click", checkInput)
-
+convertBtn.addEventListener('click', checkInput);
 
 //Funciones
 function checkInput() {
-    const inputNumberConvert = parseInt(inputNumber.value)
+    const inputNumberConvert = parseInt(inputNumber.value);
     if (!inputNumber.value.trim()) {
-        output.textContent = "Please enter a valid number";
+        output.textContent = 'Please enter a valid number';
         mostrarError(output);
         return;
     } else if (inputNumberConvert <= 0) {
-        output.textContent = "Please enter a number greater than or equal to 1";
+        output.textContent = 'Please enter a number greater than or equal to 1';
         mostrarError(output);
         return;
     } else if (inputNumberConvert >= 4000) {
-        output.textContent = "Please enter a number less than or equal to 3999";
+        output.textContent = 'Please enter a number less than or equal to 3999';
         mostrarError(output);
         return;
     }
     convertInput(inputNumberConvert);
-};
+}
 
 function convertInput(input) {
-    output.textContent = "";
+    output.textContent = '';
+    const romanos = {
+        M: 1000,
+        CM: 900,
+        D: 500,
+        CD: 400,
+        C: 100,
+        XC: 90,
+        L: 50,
+        XL: 40,
+        X: 10,
+        IX: 9,
+        V: 5,
+        IV: 4,
+        I: 1,
+    };
 
-    while (input > 0) {
-        if (input >= 1000) {
-            output.textContent += "M";
-            input -= 1000;
-        } else if (input >= 900) {
-            output.textContent += "CM";
-            input -= 900;
-        } else if (input >= 500) {
-            output.textContent += "D";
-            input -= 500;
-        } else if (input >= 400) {
-            output.textContent += "CD";
-            input -= 400;
-        } else if (input >= 100) {
-            output.textContent += "C";
-            input -= 100;
-        } else if (input >= 90) {
-            output.textContent += "XC";
-            input -= 90;
-        } else if (input >= 50) {
-            output.textContent += "L";
-            input -= 50;
-        } else if (input >= 40) {
-            output.textContent += "XL";
-            input -= 40;
-        } else if (input >= 10) {
-            output.textContent += "X";
-            input -= 10;
-        } else if (input === 9) {
-            output.textContent += "IX"
-            input -= 9;
-        } else if (input >= 5) {
-            output.textContent += "V"
-            input -= 5;
-        } else if (input === 4) {
-            output.textContent += "IV"
-            input -= 4;
-        } else if (input >= 1) {
-            output.textContent += "I"
-            input -= 1;
+    for (const key in romanos) {
+        while (input >= romanos[key]) {
+            output.textContent += key
+            input -= romanos[key]
         }
     }
     mostrarCorrecto(output);
     return output.textContent;
-};  
+}
 
 function mostrarError(output) {
-    output.classList.remove("correcto");
-    output.classList.remove("oculto");
-    output.classList.add("error");
-    output.classList.add("visible");
+    output.classList.remove('correcto');
+    output.classList.remove('oculto');
+    output.classList.add('error');
+    output.classList.add('visible');
 }
 
 function mostrarCorrecto(output) {
-    output.classList.remove("error");
-    output.classList.remove("oculto");
-    output.classList.add("correcto");
-    output.classList.add("visible");
+    output.classList.remove('error');
+    output.classList.remove('oculto');
+    output.classList.add('correcto');
+    output.classList.add('visible');
 }
